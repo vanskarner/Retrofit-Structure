@@ -38,7 +38,7 @@ _Proyecto construido con_
 
 ## Licencia 📄
 
-Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE.md](LICENSE.md) para detalles
+Este proyecto está bajo la Licencia Apache versión 2.0 - mira el archivo [LICENSE.txt](LICENSE.txt) para detalles
 
 ## Expresiones de Gratitud 🎁
 
