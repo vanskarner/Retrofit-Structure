@@ -1,9 +1,9 @@
 package vanskarner.android.retrofitstructure.api_service.codeapi;
 
-public class CodeApiInstance {
+public class CodeApiSingleton {
     private static CodeApi instance=null;
 
-    private CodeApiInstance() {
+    private CodeApiSingleton() {
     }
 
     private static void crearInstance(){

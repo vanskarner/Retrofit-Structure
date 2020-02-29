@@ -10,6 +10,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import vanskarner.android.retrofitstructure.api_service.OnCompleteListener;
+import vanskarner.android.retrofitstructure.api_service.ServicesCallback;
 import vanskarner.android.retrofitstructure.api_service.request.UserReq;
 import vanskarner.android.retrofitstructure.api_service.response.UserRes;
 import vanskarner.android.retrofitstructure.api_service.services.UserService;
@@ -82,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setInfoDelete();
         switch (v.getId()) {
             case R.id.btnGet:
-                UserService.posts_GET(new OnCompleteListener<UserRes>() {
+                ServicesCallback.userService().posts_GET(new OnCompleteListener<UserRes>() {
                     @Override
                     public void onSuccess(UserRes object) {
                         setInfo(object);
@@ -101,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 userReq.setUserId(1);
                 userReq.setBody("bar");
                 userReq.setTitle("foo");
-                UserService.posts_POST(userReq, new OnCompleteListener<UserRes>() {
+                ServicesCallback.userService().posts_POST(userReq, new OnCompleteListener<UserRes>() {
                     @Override
                     public void onSuccess(UserRes object) {
                         setInfo(object);
@@ -121,7 +122,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 userReq2.setUserId(1);
                 userReq2.setBody("bar");
                 userReq2.setTitle("foo");
-                UserService.posts_PUT(userReq2, new OnCompleteListener<UserRes>() {
+                ServicesCallback.userService().posts_PUT(userReq2, new OnCompleteListener<UserRes>() {
                     @Override
                     public void onSuccess(UserRes object) {
                         setInfo(object);
@@ -136,7 +137,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 });
                 break;
             case R.id.btnDelete:
-                UserService.posts_DELETE(new OnCompleteListener<UserRes>() {
+                ServicesCallback.userService().posts_DELETE(new OnCompleteListener<UserRes>() {
                     @Override
                     public void onSuccess(UserRes object) {
                         Toast.makeText(MainActivity.this, "DELETE", Toast.LENGTH_SHORT).show();

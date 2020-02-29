@@ -11,21 +11,41 @@ public class UserService {
     private static String BASE_URL = BuildConfig.URL_BASE;
     private static UserApi userApi = ConfigRetrofit.createService(UserApi.class, BASE_URL);
 
-
-    public static void posts_GET(OnCompleteListener<UserRes> listener) {
+    public void posts_GET(OnCompleteListener<UserRes> listener) {
         userApi.posts_GET().enqueue(UserCallback.defaultCallBack(listener));
     }
 
-    public static void posts_POST(UserReq user, OnCompleteListener<UserRes> listener) {
+    public void posts_POST(UserReq user, OnCompleteListener<UserRes> listener) {
         userApi.posts_POST(user).enqueue(UserCallback.defaultCallBack(listener));
     }
 
-    public static void posts_PUT(UserReq user, OnCompleteListener<UserRes> listener) {
+    public void posts_PUT(UserReq user, OnCompleteListener<UserRes> listener) {
         userApi.posts_PUT(user).enqueue(UserCallback.defaultCallBack(listener));
     }
 
-    public static void posts_DELETE(OnCompleteListener<UserRes> listener) {
+    public void posts_DELETE(OnCompleteListener<UserRes> listener) {
         userApi.posts_DELETE().enqueue(UserCallback.defaultCallBack(listener));
     }
 
+    /*Patter Singleton*/
+    private static UserService instance=null;
+
+    private UserService() {
+    }
+
+    private static void crearInstance(){
+        if (instance==null){
+            synchronized (UserService.class){
+                if (instance==null){
+                    instance=new UserService();
+                }
+            }
+        }
+    }
+
+    public static UserService getInstance(){
+        if (instance==null)
+            crearInstance();
+        return instance;
+    }
 }

@@ -8,12 +8,12 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import vanskarner.android.retrofitstructure.api_service.OnCompleteListener;
 import vanskarner.android.retrofitstructure.api_service.codeapi.CodeApi;
-import vanskarner.android.retrofitstructure.api_service.codeapi.CodeApiInstance;
+import vanskarner.android.retrofitstructure.api_service.codeapi.CodeApiSingleton;
 import vanskarner.android.retrofitstructure.api_service.response.UserRes;
 
 class UserCallback {
     private static final String TAG = "UserCallback";
-    private static CodeApi codeApi = CodeApiInstance.getInstance();
+    private static CodeApi codeApi = CodeApiSingleton.getInstance();
 
         /*TODO: If you need a more personalized listener declare it here
 
