@@ -23,7 +23,7 @@ Solo basta con copiar la estructura de la carpeta api_service a su proyecto pers
 Las versiones declaradas en Pre-requisitos funcionan bien en versiones de android 4.1 a 9.0 (hasta donde se probo).
 
 Es problable que salga errores al usarlo con el emulador Genymotion para las versiones de android 5.0 a 5.1, esto no debería
-suceder dispositivos en reales, por lo que el error solo se limita al emulador.
+suceder en dispositivos reales, por lo que el error solo se limita al emulador.
 
 Si sube las versiones de Retrofit o Okhttp  es muy probable que surgan errores con versiones de android menores a 5.0
 
